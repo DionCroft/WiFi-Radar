@@ -1,0 +1,45 @@
+menu "ESP32 CSI Radar Demo"
+
+config CSI_WIFI_SSID
+    string "Wi-Fi SSID"
+    default "YOUR_WIFI_SSID"
+
+config CSI_WIFI_PASSWORD
+    string "Wi-Fi password"
+    default "YOUR_WIFI_PASSWORD"
+
+config CSI_WIFI_CHANNEL
+    int "Wi-Fi channel"
+    range 1 14
+    default 6
+
+config CSI_SERIAL_BAUD
+    int "Serial baud rate"
+    default 921600
+
+config CSI_QUEUE_DEPTH
+    int "CSI queue depth"
+    default 32
+
+config CSI_MAX_BYTES
+    int "Maximum CSI bytes copied per packet"
+    default 512
+
+config CSI_OUTPUT_ENABLE
+    bool "Enable CSI serial CSV output"
+    default y
+
+config CSI_PROMISCUOUS_MODE
+    bool "Enable promiscuous/sniffer mode"
+    default n
+
+config CSI_TX_MODE
+    bool "Optional UDP broadcast transmitter mode"
+    default n
+
+config CSI_TX_INTERVAL_MS
+    int "TX mode UDP interval in milliseconds"
+    default 100
+
+endmenu
+
