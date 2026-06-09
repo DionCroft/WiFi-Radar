@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wifi-csi-sensing-toolkit"
+version = "0.1.0"
+description = "Wi-Fi CSI sensing toolkit for motion, occupancy, and breathing experiments."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "wifi-csi-sensing-toolkit contributors" }
+]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "pandas>=2.0",
+    "matplotlib>=3.7",
+    "typer>=0.9"
+]
+
+[project.optional-dependencies]
+parsers = ["csiread", "scapy"]
+live = ["pyserial"]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+wificsi = "wificsi.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
